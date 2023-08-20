@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - FireButton
+  - pyramid
+  - plane
+  - battleship
   layers:
   - Default
   - TransparentFX
