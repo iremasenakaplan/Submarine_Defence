@@ -7,9 +7,13 @@ public class GunRocketController : MonoBehaviour
 {
     public GameObject roketPrefab; 
     public Transform firlatNoktasi; 
-    public float firlatGucu = 10f; 
+    public float firlatGucu = 10f;
+    AudioSource audioSource;
 
-
+    public void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     public void FirlatRoket()
     {
        
@@ -17,5 +21,7 @@ public class GunRocketController : MonoBehaviour
 
         Rigidbody roketRigidbody = yeniRoket.GetComponent<Rigidbody>();
         roketRigidbody.AddForce(firlatNoktasi.forward * firlatGucu, ForceMode.Impulse);
+        audioSource.Play();
+        
     }
 }
