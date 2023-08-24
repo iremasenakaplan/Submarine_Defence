@@ -20,10 +20,15 @@ public class Missile : MonoBehaviour
      if (collision.gameObject.CompareTag("battleship"))
      {
        Instantiate(explosionEffect, transform.position, transform.rotation);
-      Destroy(gameObject);
+       Destroy(gameObject);
 
+            GunRocketController battleshipHealth = collision.gameObject.GetComponent<GunRocketController>();
+            if (battleshipHealth != null)
+            {
+                battleshipHealth.DecreaseHealth(1);
+            }
 
-    }
+        }
    }
 
    
