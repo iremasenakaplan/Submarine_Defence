@@ -8,6 +8,7 @@ TagManager:
   - pyramid
   - plane
   - battleship
+  - missile
   layers:
   - Default
   - TransparentFX

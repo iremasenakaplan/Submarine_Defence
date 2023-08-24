@@ -22,11 +22,11 @@ public class Missile : MonoBehaviour
        Instantiate(explosionEffect, transform.position, transform.rotation);
        Destroy(gameObject);
 
-            GunRocketController battleshipHealth = collision.gameObject.GetComponent<GunRocketController>();
-            if (battleshipHealth != null)
-            {
-                battleshipHealth.DecreaseHealth(1);
-            }
+        //    GunRocketController battleshipHealth = collision.gameObject.GetComponent<GunRocketController>();
+          //  if (battleshipHealth != null)
+         //   {
+          //      battleshipHealth.DecreaseHealth(1);
+          //  }
 
         }
    }

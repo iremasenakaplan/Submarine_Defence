@@ -8,12 +8,25 @@ public class GunRocketController : MonoBehaviour
     public GameObject roketPrefab;
     public Transform firlatNoktasi;
     public float firlatGucu = 10f;
-    AudioSource audioSource;
-    public Slider healthSliderB;
+    public Button fireButton;
+    public Image fireButtonImage;
+ 
+    // AudioSource audioSource;
+    //public Slider healthSliderB;
 
-    private void Start()
+    //private void Start()
+    // {
+    //  audioSource = GetComponent<AudioSource>();
+    //  }
+
+    private void Update()
     {
-        audioSource = GetComponent<AudioSource>();
+        if (fireButtonImage.fillAmount < 1) {
+            fireButtonImage.fillAmount += Time.deltaTime/2.0f;
+            if (fireButtonImage.fillAmount >= 1) {
+                fireButton.interactable = true;
+            }
+        }
     }
 
     public void FirlatRoket()
@@ -22,11 +35,13 @@ public class GunRocketController : MonoBehaviour
 
         Rigidbody roketRigidbody = yeniRoket.GetComponent<Rigidbody>();
         roketRigidbody.AddForce(firlatNoktasi.forward * firlatGucu, ForceMode.Impulse);
-        audioSource.Play();
+        fireButton.interactable = false;
+        fireButtonImage.fillAmount = 0;
+     //   audioSource.Play();
     }
 
-    public void DecreaseHealth(float amount)
-    {
-        healthSliderB.value -= amount;
-    }
+    //public void DecreaseHealth(float amount)
+    //{
+     //   healthSliderB.value -= amount;
+    //}
 }
