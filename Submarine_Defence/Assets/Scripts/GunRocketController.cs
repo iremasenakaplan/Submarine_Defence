@@ -10,7 +10,8 @@ public class GunRocketController : MonoBehaviour
     public float firlatGucu = 10f;
     public Button fireButton;
     public Image fireButtonImage;
- 
+    public Image cross;
+
     // AudioSource audioSource;
     //public Slider healthSliderB;
 
@@ -27,6 +28,27 @@ public class GunRocketController : MonoBehaviour
                 fireButton.interactable = true;
             }
         }
+
+        Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit))
+        {
+            if (hit.transform.tag == "battleship")
+            {
+                cross.color = Color.red;
+            }
+            else
+            {
+                cross.color = Color.green;
+            }
+            // now do second raycast from hit.point to gun.nozzle
+        }
+        else {
+            cross.color = Color.green;
+        }
+
+       
     }
 
     public void FirlatRoket()
