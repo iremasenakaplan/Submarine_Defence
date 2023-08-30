@@ -12,7 +12,7 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField] GameObject[] parts;
     [SerializeField] Material destroyedMaterial;
     bool isFiring = false;
-    // Start is called before the first frame update
+    public GameManager gameManager;
 
 
     private void OnCollisionEnter(Collision collision)
@@ -32,6 +32,7 @@ public class EnemyBehaviour : MonoBehaviour
                 }
                 GetComponent<Rigidbody>().isKinematic = false;
                 //Destroy(this.gameObject);
+                GameManager.Instance.EnemyKilled();
             }
 
             if (enemyHealthbar.value <= 50 && enemyHealthbar.value > 0 && !isFiring) {
