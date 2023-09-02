@@ -25,12 +25,12 @@ public class GameManager : MonoBehaviour
         UIManager.Instance.UpdateEnemyCount(killedEnemies, totalEnemies);
         if (killedEnemies >= totalEnemies)
         {
-            UIManager.Instance.Won(); // asena seymuru seviyor :D Seymurda asenanin kocaman
+            UIManager.Instance.Won(); 
             Debug.Log("Oyun bitti! Tüm düþmanlar öldürüldü.");
         }
     }
 
-    // Kalan düþman sayýsýný hesaplamak için bir metod
+    
     public int GetRemainingEnemyCount()
     {
         return totalEnemies - killedEnemies;

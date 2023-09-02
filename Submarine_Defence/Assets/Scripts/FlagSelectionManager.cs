@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class FlagSelectionManager : MonoBehaviour
 {
-    public GameObject flagPanel; // Ülke bayraklarýnýn bulunduðu panel
-    public Button flagButton;    // Ana bayrak butonu
-    public Image flagImage;      // Ana bayrak resmi
+    public GameObject flagPanel; 
+    public Button flagButton;    
+    public Image flagImage;    
 
 
     private void Start()

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CountryFlagButton : MonoBehaviour
 {
-    public Sprite countryFlag; // Ülke bayraðý resmi
+    public Sprite countryFlag;
 
     private FlagSelectionManager flagSelectionManager;
 
