@@ -12,24 +12,22 @@ public class EnemeySpawner : MonoBehaviour
 
     void Start()
     {
-        DusmanOlustur();
+        spawnEnemy();
     }
 
-    void DusmanOlustur()
+    void spawnEnemy()
     {
-        int dusmanSayisi = 5; // Kaç düþman oluþturulacak
+        int spawnOfEnemies = 3; 
 
-        for (int i = 0; i < dusmanSayisi; i++)
+        for (int i = 0; i < spawnOfEnemies; i++)
         {
-            // Rastgele bir pozisyon oluþturun.
-            Vector3 rastgelePozisyon = new Vector3(
-                Random.Range(minXZ.x, maxXZ.x),
-                transform.position.y, // Y ekseni sabit
-                Random.Range(minXZ.y, maxXZ.y)
-            );
-
-            // Düþmaný oluþturun ve rastgele pozisyona yerleþtirin.
-            Instantiate(enemyPrefab, rastgelePozisyon, Quaternion.identity);
+            
+            Vector3 randomPosition = new Vector3(
+            Random.Range(minXZ.x, maxXZ.x),
+            transform.position.y, 
+            Random.Range(minXZ.y, maxXZ.y));
+ 
+            Instantiate(enemyPrefab, randomPosition, Quaternion.identity);
         }
     }
 }
