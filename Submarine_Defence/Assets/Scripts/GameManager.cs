@@ -6,12 +6,17 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    int totalEnemies = 3;
+    int totalEnemies ;
     int killedEnemies = 0;
 
     private void Start()
     {
         Instance = this;
+        
+    }
+
+    public void SetEnemyCount(int enemyCount) {
+        totalEnemies = enemyCount;
         UIManager.Instance.UpdateEnemyCount(killedEnemies, totalEnemies);
     }
     public void EnemyKilled()

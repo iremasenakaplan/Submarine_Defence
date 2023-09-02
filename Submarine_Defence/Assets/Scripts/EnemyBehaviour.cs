@@ -32,6 +32,7 @@ public class EnemyBehaviour : MonoBehaviour
                 }
                 GetComponent<Rigidbody>().isKinematic = false;
                 //Destroy(this.gameObject);
+                Destroy(this.gameObject, 2f);
                 GameManager.Instance.EnemyKilled();
             }
 

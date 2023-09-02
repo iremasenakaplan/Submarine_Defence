@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 namespace QuantumTek.QuantumTravel
 {
@@ -23,19 +24,32 @@ namespace QuantumTek.QuantumTravel
         public List<QT_MapMarker> Markers { get; set; } = new List<QT_MapMarker>();
 
         [Header("Compass Bar Variables")]
-        public Vector2 CompassSize = new Vector2(200, 25);
-        public Vector2 ShownCompassSize = new Vector2(100, 25);
+        public Vector2 CompassSize = new Vector2(1000, 70);
+        public Vector2 ShownCompassSize = new Vector2(500, 70);
         public float MaxRenderDistance = 5;
         public float MarkerSize = 20;
         public float MinScale = 0.5f;
         public float MaxScale = 2f;
 
-        private void Awake()
+        bool showing = false;
+
+        private void Start()
         {
-            foreach (var obj in Objects)
+            //ReferenceObject = FindObjectOfType<QT_MapObject>();
+            StartCoroutine(AddEnemyMarkers());
+        }
+
+        IEnumerator AddEnemyMarkers()
+        {
+            yield return new WaitForSeconds(2.0f);
+            
+            var founMapObjects = FindObjectsOfType<QT_MapObject>();
+            foreach (var obj in founMapObjects)
                 if (obj.Data.ShowOnCompass)
                     AddMarker(obj);
 
+
+            showing = true;
             rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, ShownCompassSize.x);
             rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, ShownCompassSize.y);
             barBackground.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, CompassSize.x);
@@ -44,12 +58,16 @@ namespace QuantumTek.QuantumTravel
 
         private void Update()
         {
-            image.uvRect = new Rect(ReferenceObject.transform.localEulerAngles.y / 360, 0, 1, 1);
 
-            foreach (var marker in Markers)
+            if (showing)
             {
-                marker.SetPosition(CalculatePosition(marker));
-                marker.SetScale(CalculateScale(marker));
+                image.uvRect = new Rect(ReferenceObject.transform.localEulerAngles.y / 360, 0, 1, 1);
+
+                foreach (var marker in Markers)
+                {
+                    marker.SetPosition(CalculatePosition(marker));
+                    //marker.SetScale(CalculateScale(marker));
+                }
             }
         }
 
