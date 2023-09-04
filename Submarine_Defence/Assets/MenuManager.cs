@@ -14,6 +14,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] Slider gunHealth;
     [SerializeField] Slider gunDamage;
     [SerializeField] Slider gunFireR;
+    [SerializeField] Image gunCountryFlag;
     [SerializeField] TMP_Text gunName;
     [SerializeField] TMP_Text gunPrice;
     [SerializeField] TMP_Text bankText;
@@ -47,6 +48,7 @@ public class MenuManager : MonoBehaviour
         gunDamage.value = shipParameters[currentTurretIndex].damage;
         gunFireR.value = shipParameters[currentTurretIndex].fireRate;
         gunName.text = shipParameters[currentTurretIndex].name;
+        gunCountryFlag.sprite = shipParameters[currentTurretIndex].flag;
         currentGun = Instantiate(shipParameters[currentTurretIndex].menuGun, gunParent);
         CheckLockStatus();
         SetupQuality();
@@ -90,6 +92,7 @@ public class MenuManager : MonoBehaviour
             gunDamage.value = shipParameters[currentTurretIndex].damage;
             gunFireR.value = shipParameters[currentTurretIndex].fireRate;
             gunName.text = shipParameters[currentTurretIndex].name;
+            gunCountryFlag.sprite = shipParameters[currentTurretIndex].flag;
             currentGun = Instantiate(shipParameters[currentTurretIndex].menuGun, gunParent);
             CheckLockStatus();
             currentGunIndex = currentTurretIndex;
@@ -107,6 +110,7 @@ public class MenuManager : MonoBehaviour
             gunDamage.value = shipParameters[currentTurretIndex].damage;
             gunFireR.value = shipParameters[currentTurretIndex].fireRate;
             gunName.text = shipParameters[currentTurretIndex].name;
+            gunCountryFlag.sprite = shipParameters[currentTurretIndex].flag;
             currentGun = Instantiate(shipParameters[currentTurretIndex].menuGun, gunParent);
             CheckLockStatus();
             currentGunIndex = currentTurretIndex;

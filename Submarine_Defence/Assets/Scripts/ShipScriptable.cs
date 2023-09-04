@@ -14,4 +14,5 @@ public class ShipScriptable : ScriptableObject
     public int price;
     public GameObject menuGun;
     public GameObject gameGun;
+    public Sprite flag;
 }
