@@ -20,6 +20,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] TMP_Text bankText;
     [SerializeField] TMP_Text levelText;
     [SerializeField] GameObject gunLock;
+    [SerializeField] GameObject shopPanel;
     [SerializeField] Button playButton;
     [SerializeField] Button unlockGun;
     [SerializeField] Transform gunParent;
@@ -123,7 +124,7 @@ public class MenuManager : MonoBehaviour
 
     private void CheckLockStatus()
     {
-        if (shipParameters[currentTurretIndex].price == 0 || PlayerPrefs.GetInt(shipParameters[currentTurretIndex].gunCode) == 1)
+        if (shipParameters[currentTurretIndex].price == 0 || PlayerPrefs.GetInt(Application.identifier + shipParameters[currentTurretIndex].gunCode) == 1)
         {
             gunLock.transform.localPosition = new Vector3(gunLock.transform.localPosition.x, 2000, gunLock.transform.localPosition.z);
             playButton.gameObject.SetActive(true);
@@ -135,31 +136,44 @@ public class MenuManager : MonoBehaviour
             gunPrice.text = shipParameters[currentTurretIndex].price.ToString();
         }
 
-        if(bankAccount>= shipParameters[currentTurretIndex].price){
-            unlockGun.interactable = true;
-        }else{
-            unlockGun.interactable = false;
-        }
+        // if(bankAccount>= shipParameters[currentTurretIndex].price){
+        //     //unlockGun.interactable = true;
+        // }else{
+        //     //unlockGun.interactable = false;
+        // }
     }
 
     public void UnlockGunWithCoin()
     {
-        if(bankAccount>=shipParameters[currentTurretIndex].price){
+        if(bankAccount>= shipParameters[currentTurretIndex].price){
             bankAccount-= shipParameters[currentTurretIndex].price;
             bankText.text = bankAccount.ToString();
             PlayerPrefs.SetInt(Application.identifier + "BANK", bankAccount);
             PlayerPrefs.SetInt(shipParameters[currentTurretIndex].gunCode, 1);
             gunLock.transform.localPosition = new Vector3(gunLock.transform.localPosition.x, 2000, gunLock.transform.localPosition.z);
             playButton.gameObject.SetActive(true);
+        
+        }else{
+            shopPanel.SetActive(true);
         }
+        
     }
-
-    public void UnlockGunWithPurchase()
-    {
-        PlayerPrefs.SetInt(shipParameters[currentTurretIndex].gunCode, 1);
+    public void BuyGunWithIAP(){
+       // float scale = currentGun.transform.localScale.x*1.1f;
+       // currentGun.transform.DOScale(new Vector3(scale, scale, scale), 0.7f).OnComplete(GunToNormal);
+       // currentGun.transform.DORotate(new Vector3(0, 360, 0), 0.5f, RotateMode.FastBeyond360).SetEase(Ease.Linear).SetLoops(2);
+       // Destroy(Instantiate(gunUnlockEffect, new Vector3(0,0,0), gunUnlockEffect.transform.rotation), 2.0f);
+        PlayerPrefs.SetInt(Application.identifier+shipParameters[currentTurretIndex].gunCode, 1);
         gunLock.transform.localPosition = new Vector3(gunLock.transform.localPosition.x, 2000, gunLock.transform.localPosition.z);
-        playButton.gameObject.SetActive(true);
+        playButton.gameObject.SetActive(true);   
+        CheckLockStatus();
     }
+    // public void UnlockGunWithPurchase()
+    // {
+    //     PlayerPrefs.SetInt(ApplicatioshipParameters[currentTurretIndex].gunCode, 1);
+    //     gunLock.transform.localPosition = new Vector3(gunLock.transform.localPosition.x, 2000, gunLock.transform.localPosition.z);
+    //     playButton.gameObject.SetActive(true);
+    // }
 
 
     public void Play(){
@@ -172,6 +186,8 @@ public class MenuManager : MonoBehaviour
         bankText.text = bankAccount.ToString();
 
     }
+
+
 
 
     public void SetLevel(TMP_InputField level){
@@ -199,5 +215,42 @@ public class MenuManager : MonoBehaviour
     public void AdWatchEarn(){
         Action adWatchResult = GetAdMoney;
         GoogleMobileAdsDemoScript.Instance.UserChoseToWatchAd(adWatchResult);
+    }
+
+    public void ShareApp(){
+        #if UNITY_IPHONE
+            //new NativeShare().SetSubject("Amazing Air Defence simulator").SetText("Check out this game  "+"https://apps.apple.com/us/app/c-ram-simulator/id1670008464").Share();
+        #endif
+        #if UNITY_ANDROID
+            //new NativeShare().SetSubject("Amazing Air Defence simulator").SetText("Check out this game  "+"https://play.google.com/store/apps/details?id=" + Application.identifier).Share();
+        #endif
+    }
+
+    public void RateApp(){
+        #if UNITY_IPHONE
+           // Application.OpenURL("https://apps.apple.com/us/app/c-ram-simulator/id1670008464");
+        #endif
+        #if UNITY_ANDROID
+            Application.OpenURL("https://play.google.com/store/apps/details?id=" + Application.identifier);
+        #endif
+    }
+
+	public void Privacy(){
+        Application.OpenURL("https://alvadigames.github.io/policy.txt");
+    }
+
+    public void Feedback(){
+        sendEmail("alvadigames@gmail.com", "", "Submarine Defense");
+    }
+
+    void sendEmail(string toEmail, string emailSubject, string emailBody)
+    {
+        emailSubject = System.Uri.EscapeUriString(emailSubject);
+        emailBody = System.Uri.EscapeUriString(emailSubject);
+        Application.OpenURL("mailto:" + toEmail + "?subject=" + emailSubject + "&body=" + emailBody);
+    }
+
+	public void Youtube(){
+        Application.OpenURL("https://www.youtube.com/@alvadigames");
     }
 }

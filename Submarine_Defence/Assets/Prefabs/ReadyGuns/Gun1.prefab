@@ -902,7 +902,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6816594832767790229}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -940,7 +940,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roketPrefab: {fileID: 132654, guid: 4a708b62afc65a943b2c869def7e4aa3, type: 3}
   firlatNoktasi: {fileID: 6816594831099777695}
-  firlatGucu: 10
+  firlatGucu: 30
   fireButton: {fileID: 6816594832503861288}
   fireButtonImage: {fileID: 6816594832503861303}
   cross: {fileID: 6816594831816888974}

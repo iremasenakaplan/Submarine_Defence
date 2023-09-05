@@ -17,7 +17,7 @@ MonoBehaviour:
   hp: 36
   damage: 32
   fireRate: 55
-  price: 4000
+  price: 12000
   menuGun: {fileID: 6535446500718803033, guid: eb62d3e87bd764d46bc9c247482e7f62, type: 3}
   gameGun: {fileID: 6816594832767790229, guid: bd5b5e62186de424f8a2d90d3c16ae65, type: 3}
   flag: {fileID: 21300000, guid: f9452b0d7b24eac4e9c1543d36ca60eb, type: 3}
