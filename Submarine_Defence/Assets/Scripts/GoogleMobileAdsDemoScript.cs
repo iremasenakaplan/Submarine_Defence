@@ -41,7 +41,7 @@ public class GoogleMobileAdsDemoScript : MonoBehaviour
     int isPro;
     bool showAdDelayFinished = true;
 
-    public void Start()
+    private void Start()
     {
         if (Instance != null && Instance != this) 
         { 

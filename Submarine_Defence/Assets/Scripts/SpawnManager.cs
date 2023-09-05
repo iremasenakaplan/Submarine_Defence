@@ -6,16 +6,17 @@ public class SpawnManager : MonoBehaviour
 {
 
     [SerializeField] LevelScriptable[] levelConfigs;
+    [SerializeField] ShipScriptable[] shipConfigs;
     //public GameObject enemyPrefab;
 
-   /* [Header("Spawn Sýnýrlarý")]
+   /* [Header("Spawn Sï¿½nï¿½rlarï¿½")]
     public Vector2 minXZ = new Vector2(-20f, -20f); 
     public Vector2 maxXZ = new Vector2(20f, 20f);*/
 
     void Start()
     {
 
-
+        Instantiate(shipConfigs[MenuManager.currentGunIndex].gameGun, shipConfigs[MenuManager.currentGunIndex].gameGun.transform.position, shipConfigs[MenuManager.currentGunIndex].gameGun.transform.rotation);
         int level = PlayerPrefs.GetInt(Application.identifier + "Level");
         
         for (int i = 0; i < levelConfigs.Length; i++)
@@ -51,8 +52,7 @@ public class SpawnManager : MonoBehaviour
         }
 
         
-
-      //  SpawnEnemy();
+        
     }
 
     void SpawnEnemyShips(GameObject[] shipList)
