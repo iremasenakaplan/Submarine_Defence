@@ -2,11 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using PathCreation; 
+using PathCreation.Examples;
+
 public class SpawnManager : MonoBehaviour
 {
 
     [SerializeField] LevelScriptable[] levelConfigs;
     [SerializeField] ShipScriptable[] shipConfigs;
+    [SerializeField] PathCreator[] paths;
     //public GameObject enemyPrefab;
 
    /* [Header("Spawn S�n�rlar�")]
@@ -68,7 +72,8 @@ public class SpawnManager : MonoBehaviour
             transform.position.y,
             randXZ.y);
  
-            Instantiate(ship, randomPosition, ship.transform.rotation);
+            GameObject s = Instantiate(ship, randomPosition, ship.transform.rotation);
+            s.GetComponent<PathFollower>().SetPath(paths[Random.Range(0, paths.Length-1)]);
         }
         GameManager.Instance.SetEnemyCount(shipList.Length); 
     }

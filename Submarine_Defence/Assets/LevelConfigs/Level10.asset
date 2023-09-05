@@ -15,9 +15,9 @@ MonoBehaviour:
   startIndex: 10
   enemyShips:
   - {fileID: 5279338845878157373, guid: eed5e169587ff0c42919b77d4b0f882c, type: 3}
+  - {fileID: 7319149842756875652, guid: 269f3eaf35757af4f9d1dcd5e5f00341, type: 3}
   - {fileID: 5279338845878157373, guid: eed5e169587ff0c42919b77d4b0f882c, type: 3}
-  - {fileID: 5279338845878157373, guid: eed5e169587ff0c42919b77d4b0f882c, type: 3}
-  - {fileID: 5279338845878157373, guid: eed5e169587ff0c42919b77d4b0f882c, type: 3}
+  - {fileID: 7319149842756875652, guid: 269f3eaf35757af4f9d1dcd5e5f00341, type: 3}
   - {fileID: 5279338845878157373, guid: eed5e169587ff0c42919b77d4b0f882c, type: 3}
   - {fileID: 5279338845878157373, guid: eed5e169587ff0c42919b77d4b0f882c, type: 3}
   - {fileID: 5279338845878157373, guid: eed5e169587ff0c42919b77d4b0f882c, type: 3}

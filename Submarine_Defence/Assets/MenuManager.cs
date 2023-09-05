@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
-
-
+using UnityEngine.Events;
+using System;
 
 public class MenuManager : MonoBehaviour
 {
@@ -26,6 +26,9 @@ public class MenuManager : MonoBehaviour
     [SerializeField] Toggle[] qualityToggles;
     [SerializeField] Toggle[] controlToggles;
     [SerializeField] Toggle vibrationToggle;
+
+
+
 
     int currentTurretIndex = 0;
     GameObject currentGun;
@@ -187,5 +190,14 @@ public class MenuManager : MonoBehaviour
             PlayerPrefs.SetInt(Application.identifier + "Vibration", 1);
         else
             PlayerPrefs.SetInt(Application.identifier + "Vibration", 0);
+    }
+
+    private void GetAdMoney(){
+        BuyMoney(500);
+    }
+
+    public void AdWatchEarn(){
+        Action adWatchResult = GetAdMoney;
+        GoogleMobileAdsDemoScript.Instance.UserChoseToWatchAd(adWatchResult);
     }
 }

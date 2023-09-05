@@ -3691,6 +3691,7 @@ GameObject:
   - component: {fileID: 1335525843491103026}
   - component: {fileID: 8763727224728194331}
   - component: {fileID: 739424715798699936}
+  - component: {fileID: 1431071429593088864}
   m_Layer: 0
   m_Name: Battleship
   m_TagString: battleship
@@ -3797,7 +3798,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 64
   m_CollisionDetection: 0
 --- !u!114 &1335525843491103026
 MonoBehaviour:
@@ -3863,6 +3864,21 @@ MonoBehaviour:
   needArrowIndicator: 0
   needDistanceText: 1
   indicator: {fileID: 0}
+--- !u!114 &1431071429593088864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5279338845878157373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33aabe1a2dec93349b06e6e5dc51bc06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathCreator: {fileID: 0}
+  endOfPathInstruction: 0
+  speed: 5
 --- !u!1 &5280026223294254185
 GameObject:
   m_ObjectHideFlags: 0
