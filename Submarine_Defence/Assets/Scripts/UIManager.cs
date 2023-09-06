@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     public static UIManager Instance;
 
     [SerializeField] TMP_Text enemiesInfo;
+    [SerializeField] TMP_Text earned;
     [SerializeField] GameObject _wonPanel;
 
     private void Awake()
@@ -26,6 +27,9 @@ public class UIManager : MonoBehaviour
     public void Won()
     {
         PlayerPrefs.SetInt(Application.identifier + "Level", PlayerPrefs.GetInt(Application.identifier + "Level") + 1);
+        int earning = Random.Range(600, 1200);
+        earned.text = "Earned : " + earning;
+        PlayerPrefs.SetInt(Application.identifier + "BANK", PlayerPrefs.GetInt(Application.identifier + "BANK")+earning);
         _wonPanel.SetActive(true);
     }
 
@@ -39,7 +43,7 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene("MenuScene");
     }
 
-    // Unity'nin Update iþlevi, düþman sayýsýný güncellemek için kullanýlabilir
+    // Unity'nin Update iï¿½levi, dï¿½ï¿½man sayï¿½sï¿½nï¿½ gï¿½ncellemek iï¿½in kullanï¿½labilir
 
 
 }

@@ -11,6 +11,7 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] LevelScriptable[] levelConfigs;
     [SerializeField] ShipScriptable[] shipConfigs;
     [SerializeField] PathCreator[] paths;
+    [SerializeField] Material[] skyboxes;
     //public GameObject enemyPrefab;
 
    /* [Header("Spawn S�n�rlar�")]
@@ -57,6 +58,7 @@ public class SpawnManager : MonoBehaviour
 
         
         
+        RenderSettings.skybox = skyboxes[Random.Range(0, skyboxes.Length )];
     }
 
     void SpawnEnemyShips(GameObject[] shipList)

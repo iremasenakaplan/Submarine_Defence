@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class RateMechanics : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class RateMechanics : MonoBehaviour
     bool rateOpened = false;
     int testCount = 0;
     int useCount = 0;
+    public bool goToMenu = false;
     
     
     // Start is called before the first frame update
@@ -43,7 +45,10 @@ public class RateMechanics : MonoBehaviour
                     OpenRatePanel();
                 }
                 else {
-                    Application.Quit();
+                    if(goToMenu)
+                        SceneManager.LoadScene("MenuScene");
+                    else
+                        Application.Quit();
                 }
             }
         }
