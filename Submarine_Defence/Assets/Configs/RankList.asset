@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f6beeefe16d58140b815e2b367c02b6, type: 3}
+  m_Name: RankList
+  m_EditorClassIdentifier: 
+  rankList:
+  - rankIcon: {fileID: 21300000, guid: 4dd417ac2c0b3494aa7a845fd4edcc20, type: 3}
+    level: 0
+  - rankIcon: {fileID: 21300000, guid: b542a313db0b24b24b7367918238c7e3, type: 3}
+    level: 5
+  - rankIcon: {fileID: 21300000, guid: 25d071fa3184c40aa86ef659f0bfae9c, type: 3}
+    level: 10
+  - rankIcon: {fileID: 21300000, guid: 44e76a83db74a47a5b58ebd9eada584d, type: 3}
+    level: 15
+  - rankIcon: {fileID: 21300000, guid: b51c378a769ab43989918bad714c0b7b, type: 3}
+    level: 20
+  - rankIcon: {fileID: 21300000, guid: d83aebe402aa240389a5204dd6f22d75, type: 3}
+    level: 25
+  - rankIcon: {fileID: 21300000, guid: 7cca6933e8c5e48919b7b380cb231259, type: 3}
+    level: 30
+  - rankIcon: {fileID: 21300000, guid: 81f7713fa28424f459b01f81aa7e7972, type: 3}
+    level: 35
+  - rankIcon: {fileID: 21300000, guid: 9b983004a24434e3e91872dc3931ac7c, type: 3}
+    level: 40
+  - rankIcon: {fileID: 21300000, guid: 4578a933a4c8d4c80ac0a61d1e957a28, type: 3}
+    level: 45
+  - rankIcon: {fileID: 21300000, guid: f1f5f11a91be544cdaa410e87c4889ba, type: 3}
+    level: 50
+  - rankIcon: {fileID: 21300000, guid: 3e38f09732c9749c8b8b8369688bfd64, type: 3}
+    level: 55
+  - rankIcon: {fileID: 21300000, guid: ce263c764a5784361b19633861d4195a, type: 3}
+    level: 60
+  - rankIcon: {fileID: 21300000, guid: a2c46805ee26245cf9425044a311e717, type: 3}
+    level: 65
+  - rankIcon: {fileID: 21300000, guid: 1e50ffac4eb934e3f9f01385d6986a8c, type: 3}
+    level: 70
+  - rankIcon: {fileID: 21300000, guid: e0d58804df9504d26bdf91c42ff20428, type: 3}
+    level: 75
+  - rankIcon: {fileID: 21300000, guid: f526241f1a65a4a2dacb57ca448a3c4d, type: 3}
+    level: 80
+  - rankIcon: {fileID: 21300000, guid: 10da33be747b94fd693c1b0da756fe3d, type: 3}
+    level: 85
+  - rankIcon: {fileID: 21300000, guid: e04153ce08d854f0e93e2adc116d0b41, type: 3}
+    level: 90
+  - rankIcon: {fileID: 21300000, guid: f87d202c5e0ef412e8f38b8912574b09, type: 3}
+    level: 95
+  - rankIcon: {fileID: 21300000, guid: ed8a6379f044e460395029429e5ab77e, type: 3}
+    level: 100
+  - rankIcon: {fileID: 21300000, guid: 4aa93b6f30682408c875f61fd328619d, type: 3}
+    level: 105
+  - rankIcon: {fileID: 21300000, guid: 0f779024182f845a09918f01e5d76a99, type: 3}
+    level: 110
+  - rankIcon: {fileID: 21300000, guid: 540e81b3d79dc45469da801925bcdcae, type: 3}
+    level: 115
+  - rankIcon: {fileID: 21300000, guid: 136e36e61419a455990e8d9a70fc5e37, type: 3}
+    level: 120

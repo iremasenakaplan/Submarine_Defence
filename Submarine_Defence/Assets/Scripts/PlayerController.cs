@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public Joystick joystick; // Joystick referansý
-    public float rotationSpeed = 10f; // Oyuncunun dönme hýzý
+    public Joystick joystick; // Joystick referansï¿½
+    public float rotationSpeed = 10f; // Oyuncunun dï¿½nme hï¿½zï¿½
 
     void Update()
     {
@@ -14,6 +14,14 @@ public class PlayerController : MonoBehaviour
 
         transform.Rotate(Vector3.up, horizontalInput * rotationSpeed * Time.deltaTime);
         Camera.main.transform.Rotate(Vector3.right, -verticalInput * rotationSpeed * Time.deltaTime);
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "EnemyBullet"){
+            collision.gameObject.SetActive(false);
+            UIManager.Instance.GetDamage();
+        }
     }
 
 }

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a3e483a8c8243348a7d9b1e293b5b34, type: 3}
+  m_Name: Level80
+  m_EditorClassIdentifier: 
+  startIndex: 10
+  enemyShips:
+  - {fileID: 6070527319728557043, guid: a9efec7b016cc9249857257ec0958d72, type: 3}
+  - {fileID: 7655588458896967820, guid: 9bf3fcd206dfe3546bc971e3dbd5c1be, type: 3}
+  - {fileID: 5603979852051915534, guid: f3cb91d65e0998242bae4f1d287a5266, type: 3}
+  - {fileID: 4889312400101428037, guid: f89213795d1322c45bb72944841de651, type: 3}
+  - {fileID: 5603979852051915534, guid: f3cb91d65e0998242bae4f1d287a5266, type: 3}
+  - {fileID: 7655588458896967820, guid: 9bf3fcd206dfe3546bc971e3dbd5c1be, type: 3}
+  - {fileID: 6070527319728557043, guid: a9efec7b016cc9249857257ec0958d72, type: 3}
+  killLimit: 0
+  environment: {fileID: 7793009884758191893, guid: 254b878f15082b04fbb95ae8cd3062da, type: 3}
+  isFoggy: 0

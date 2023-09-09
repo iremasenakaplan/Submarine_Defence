@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2530964972092922494}
   - component: {fileID: 2530964972092922492}
   - component: {fileID: 2530964972092922493}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 2530964972857301268}
   - component: {fileID: 2530964972857301258}
   - component: {fileID: 2530964972857301259}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 2530964973270006304}
   - component: {fileID: 2530964973270006305}
   - component: {fileID: 2530964973270006306}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Dynamic Joystick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,7 +262,7 @@ GameObject:
   - component: {fileID: 6050501134386793074}
   - component: {fileID: 6050501134386793072}
   - component: {fileID: 6050501134386793075}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Cross
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -339,7 +339,7 @@ GameObject:
   - component: {fileID: 6050501135068681535}
   - component: {fileID: 6050501135068681534}
   - component: {fileID: 6050501135068681529}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -444,7 +444,7 @@ GameObject:
   - component: {fileID: 6050501135071362929}
   - component: {fileID: 6050501135071362928}
   - component: {fileID: 6050501135071362931}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Mask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -546,9 +546,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6050501135146142306}
-  m_Layer: 0
+  - component: {fileID: 1944342962318618107}
+  m_Layer: 6
   m_Name: Muzzle
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -568,6 +569,19 @@ Transform:
   m_Father: {fileID: 6050501135338288233}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1944342962318618107
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6050501135146142317}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6050501135320381253
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,7 +593,7 @@ GameObject:
   - component: {fileID: 6050501135320381306}
   - component: {fileID: 6050501135320381304}
   - component: {fileID: 6050501135320381307}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: FireButtonShadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -603,7 +617,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -200, y: 140}
+  m_AnchoredPosition: {x: -300, y: 200}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6050501135320381304
@@ -634,7 +648,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3aa64978a625e794e8997aa81090abdc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 921b4f158326fd94cbbfd20f7483f4f1, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -656,7 +670,8 @@ GameObject:
   - component: {fileID: 6050501135338288238}
   - component: {fileID: 6050501135338288239}
   - component: {fileID: 6050501135338288236}
-  m_Layer: 0
+  - component: {fileID: 1385617407825668339}
+  m_Layer: 6
   m_Name: Gun2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -706,9 +721,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08e3968a138ffa84890cb8ff4396ed68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roketPrefab: {fileID: 132654, guid: 4a708b62afc65a943b2c869def7e4aa3, type: 3}
+  roketPrefab: {fileID: 1270918712094158814, guid: 1cfe9310149cbee46a774437d4ea1231, type: 3}
   firlatNoktasi: {fileID: 6050501135146142306}
-  firlatGucu: 20
+  firlatGucu: 10
   fireButton: {fileID: 6050501135610636501}
   fireButtonImage: {fileID: 6050501135610636490}
   cross: {fileID: 6050501134386793075}
@@ -725,6 +740,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Data: {fileID: 11400000, guid: 19559c3d141a34bc8a8098d14d64edac, type: 2}
+--- !u!54 &1385617407825668339
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6050501135338288232}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 14
+  m_CollisionDetection: 0
 --- !u!1 &6050501135456626876
 GameObject:
   m_ObjectHideFlags: 0
@@ -737,7 +768,7 @@ GameObject:
   - component: {fileID: 6050501135456626867}
   - component: {fileID: 6050501135456626866}
   - component: {fileID: 6050501135456626864}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Scope
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -830,7 +861,7 @@ GameObject:
   - component: {fileID: 6050501135610636491}
   - component: {fileID: 6050501135610636490}
   - component: {fileID: 6050501135610636501}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: FireButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -854,7 +885,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -200, y: 140}
+  m_AnchoredPosition: {x: -300, y: 200}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6050501135610636491
@@ -885,7 +916,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3aa64978a625e794e8997aa81090abdc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 921b4f158326fd94cbbfd20f7483f4f1, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -963,7 +994,7 @@ GameObject:
   - component: {fileID: 6050501135810947625}
   - component: {fileID: 6050501135810947624}
   - component: {fileID: 6050501135810947630}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -1061,7 +1092,7 @@ GameObject:
   - component: {fileID: 6050501136127228720}
   - component: {fileID: 6050501136127228726}
   - component: {fileID: 6050501136127228721}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Dirt
   m_TagString: Untagged
   m_Icon: {fileID: 0}

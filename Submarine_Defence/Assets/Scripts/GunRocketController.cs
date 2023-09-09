@@ -59,6 +59,7 @@ public class GunRocketController : MonoBehaviour
         roketRigidbody.AddForce(firlatNoktasi.forward * firlatGucu, ForceMode.Impulse);
         fireButton.interactable = false;
         fireButtonImage.fillAmount = 0;
+        Destroy(yeniRoket, 15);
      //   audioSource.Play();
     }
 

@@ -30,6 +30,8 @@ public class GoogleMobileAdsDemoScript : MonoBehaviour
     public bool showBanner = true;
     public bool showAppOpen = false;
 
+    private bool notRewarded = true;
+
     //int rewardActionIndex = 0;
 
 
@@ -118,6 +120,7 @@ public class GoogleMobileAdsDemoScript : MonoBehaviour
     {
         rewardAction = action;
         if (this.rewardedAd.IsLoaded()) {
+            notRewarded = false;
             this.rewardedAd.Show();
         }
     }
@@ -212,7 +215,8 @@ public class GoogleMobileAdsDemoScript : MonoBehaviour
     public void HandleRewardedAdLoaded(object sender, EventArgs args)
     {
         MonoBehaviour.print("HandleRewardedAdLoaded event received");
-        makeRewardActive.Invoke();
+        if(notRewarded)
+            makeRewardActive.Invoke();
     }
 
     public void HandleRewardedAdFailedToLoad(object sender, AdFailedToLoadEventArgs args)

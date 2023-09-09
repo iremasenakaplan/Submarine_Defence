@@ -27,6 +27,9 @@ public class MenuManager : MonoBehaviour
     [SerializeField] Toggle[] qualityToggles;
     [SerializeField] Toggle[] controlToggles;
     [SerializeField] Toggle vibrationToggle;
+    [SerializeField] RanksScriptable ranksList;
+    [SerializeField] Image rankImage;
+    int currentLevel;
 
 
 
@@ -42,12 +45,13 @@ public class MenuManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        currentLevel = PlayerPrefs.GetInt(Application.identifier + "Level");
       //  PlayerPrefs.SetInt(Application.identifier + "BANK", 100000);
         if(PlayerPrefs.GetInt(Application.identifier + "Vibration")==1)
             vibrationToggle.SetIsOnWithoutNotify(true);
         bankAccount = PlayerPrefs.GetInt(Application.identifier + "BANK");
         bankText.text = bankAccount.ToString();
-        levelText.text = "Lvl."+PlayerPrefs.GetInt(Application.identifier + "Level").ToString();
+        levelText.text = "Lvl."+currentLevel.ToString();
         gunHealth.value = shipParameters[currentTurretIndex].hp;
         gunDamage.value = shipParameters[currentTurretIndex].damage;
         gunFireR.value = shipParameters[currentTurretIndex].fireRate;
@@ -58,6 +62,24 @@ public class MenuManager : MonoBehaviour
         SetupQuality();
 
         SetControl(PlayerPrefs.GetInt(Application.identifier + "Control"));
+
+
+        for(int i = 1; i<ranksList.rankList.Length; i++){
+
+
+            if(ranksList.rankList[i].level == currentLevel){
+                rankImage.sprite = ranksList.rankList[i].rankIcon;
+                break;
+            }
+            if(ranksList.rankList[i].level > currentLevel){
+                rankImage.sprite = ranksList.rankList[i-1].rankIcon;
+                break;
+            }
+            if(i == ranksList.rankList.Length-1){
+                rankImage.sprite = ranksList.rankList[ranksList.rankList.Length-1].rankIcon;
+                break;
+            }
+        }
     }
 
     // Update is called once per frame
@@ -149,7 +171,7 @@ public class MenuManager : MonoBehaviour
             bankAccount-= shipParameters[currentTurretIndex].price;
             bankText.text = bankAccount.ToString();
             PlayerPrefs.SetInt(Application.identifier + "BANK", bankAccount);
-            PlayerPrefs.SetInt(shipParameters[currentTurretIndex].gunCode, 1);
+            PlayerPrefs.SetInt(Application.identifier + shipParameters[currentTurretIndex].gunCode, 1);
             gunLock.transform.localPosition = new Vector3(gunLock.transform.localPosition.x, 2000, gunLock.transform.localPosition.z);
             playButton.gameObject.SetActive(true);
         

@@ -9,6 +9,10 @@ TagManager:
   - plane
   - battleship
   - missile
+  - Border
+  - EnemyBullet
+  - Water
+  - GroundHitSmoke
   layers:
   - Default
   - TransparentFX
@@ -16,9 +20,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Player
+  - Enemy
+  - Environment
   - 
   - 
   - 

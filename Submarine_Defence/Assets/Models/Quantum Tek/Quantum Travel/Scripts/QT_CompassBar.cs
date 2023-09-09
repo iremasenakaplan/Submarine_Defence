@@ -12,6 +12,7 @@ namespace QuantumTek.QuantumTravel
     [DisallowMultipleComponent]
     public class QT_CompassBar : MonoBehaviour
     {
+        public static QT_CompassBar Instance;
         [SerializeField] private RectTransform rectTransform = null;
         [SerializeField] private RectTransform barBackground = null;
         [SerializeField] private RectTransform markersTransform = null;
@@ -35,7 +36,12 @@ namespace QuantumTek.QuantumTravel
 
         private void Start()
         {
-            //ReferenceObject = FindObjectOfType<QT_MapObject>();
+            Instance = this;
+            rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, ShownCompassSize.x);
+            rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, ShownCompassSize.y);
+            barBackground.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, CompassSize.x);
+            barBackground.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, CompassSize.y);
+            ReferenceObject = FindObjectOfType<QT_MapObject>();
             StartCoroutine(AddEnemyMarkers());
         }
 
@@ -50,10 +56,20 @@ namespace QuantumTek.QuantumTravel
 
 
             showing = true;
-            rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, ShownCompassSize.x);
-            rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, ShownCompassSize.y);
-            barBackground.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, CompassSize.x);
-            barBackground.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, CompassSize.y);
+
+        }
+
+        public void RemoveMapMarker(QT_MapObject mapObject){
+            RemoveMarker(mapObject);
+            Objects.Remove(mapObject);
+        }
+
+        private void RemoveMarker(QT_MapObject mapObject){
+            foreach(QT_MapMarker m in Markers)
+                if(m.Object == mapObject){
+                    Markers.Remove(m);
+                    Destroy(m.gameObject);
+                }
         }
 
         private void Update()
