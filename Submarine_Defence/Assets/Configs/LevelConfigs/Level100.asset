@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a3e483a8c8243348a7d9b1e293b5b34, type: 3}
   m_Name: Level100
   m_EditorClassIdentifier: 
-  startIndex: 10
+  startIndex: 50
   enemyShips:
   - {fileID: 6070527319728557043, guid: a9efec7b016cc9249857257ec0958d72, type: 3}
   - {fileID: 7655588458896967820, guid: 9bf3fcd206dfe3546bc971e3dbd5c1be, type: 3}

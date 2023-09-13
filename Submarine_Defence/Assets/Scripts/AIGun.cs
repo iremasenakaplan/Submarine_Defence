@@ -107,7 +107,7 @@ public class AIGun : MonoBehaviour
                     //Rigidbody rb = bulletList[bulletIndex].GetComponent<Rigidbody>();
                     bulletList[bulletIndex].GetComponent<Rigidbody>().velocity = Vector3.zero;
                     bulletList[bulletIndex].GetComponent<Rigidbody>().angularVelocity = Vector3.zero; 
-                    bulletList[bulletIndex].GetComponent<Rigidbody>().AddForce(bulletList[bulletIndex].transform.forward *20, ForceMode.Impulse); 
+                    bulletList[bulletIndex].GetComponent<Rigidbody>().AddForce(bulletList[bulletIndex].transform.forward *30, ForceMode.Impulse); 
                     bulletIndex++;
                     //Destroy(Instantiate (Bullet, Muzzles[currentMuzleIndex].transform.position, Muzzles[currentMuzleIndex].transform.rotation), 4f); 
                     //Ammo = Ammo - 1;            

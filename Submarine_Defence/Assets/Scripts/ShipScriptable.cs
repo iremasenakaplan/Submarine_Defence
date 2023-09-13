@@ -10,6 +10,7 @@ public class ShipScriptable : ScriptableObject
     public string gunCode;
     public int hp;
     public int damage;
+    public int zoom;
     public float fireRate;
     public int price;
     public GameObject menuGun;

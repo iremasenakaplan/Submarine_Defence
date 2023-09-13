@@ -9,8 +9,9 @@ public class SpawnManager : MonoBehaviour
 {
 
     [SerializeField] LevelScriptable[] levelConfigs;
+    [SerializeField] EnvironmentScriptable[] environmentScriptable;
     [SerializeField] ShipScriptable[] shipConfigs;
-    [SerializeField] PathCreator[] paths;
+    PathCreator[] paths;
     [SerializeField] Material[] skyboxes;
     [SerializeField] GameObject compassBar;
     [SerializeField] GameObject loadEffect;
@@ -22,8 +23,15 @@ public class SpawnManager : MonoBehaviour
 
     void Start()
     {
+        int envIndex = Random.Range(0, environmentScriptable.Length);
+        Instantiate(environmentScriptable[envIndex].sun, environmentScriptable[envIndex].sun.transform.position, environmentScriptable[envIndex].sun.transform.rotation);
+        Instantiate(environmentScriptable[envIndex].ground, environmentScriptable[envIndex].ground.transform.position, environmentScriptable[envIndex].ground.transform.rotation);
+        RenderSettings.skybox = environmentScriptable[envIndex].skyboxes[Random.Range(0, environmentScriptable[envIndex].skyboxes.Length )];
+        
+        paths = FindObjectsOfType<PathCreator>();
 
         Instantiate(shipConfigs[MenuManager.currentGunIndex].gameGun, shipConfigs[MenuManager.currentGunIndex].gameGun.transform.position, shipConfigs[MenuManager.currentGunIndex].gameGun.transform.rotation);
+        MechanicsManager.Instance.SetMaxZoom(shipConfigs[MenuManager.currentGunIndex].zoom);
         compassBar.SetActive(true);
         int level = PlayerPrefs.GetInt(Application.identifier + "Level");
         
@@ -31,7 +39,7 @@ public class SpawnManager : MonoBehaviour
         {
             if (levelConfigs[i].startIndex > level)
             {
-                Instantiate(levelConfigs[i - 1].environment, levelConfigs[i - 1].environment.transform.position, levelConfigs[i - 1].environment.transform.rotation);
+                //Instantiate(levelConfigs[i - 1].environment, levelConfigs[i - 1].environment.transform.position, levelConfigs[i - 1].environment.transform.rotation);
                // UIManager.Instance.SetKillCount(levelConfigs[i - 1].killLimit);
                // shouldKillCount = levelConfigs[i - 1].killLimit;
                 if (levelConfigs[i - 1].isFoggy)
@@ -45,7 +53,7 @@ public class SpawnManager : MonoBehaviour
             }
             else if (i == levelConfigs.Length - 1)
             {
-                Instantiate(levelConfigs[i].environment, levelConfigs[i].environment.transform.position, levelConfigs[i].environment.transform.rotation);
+                //Instantiate(levelConfigs[i].environment, levelConfigs[i].environment.transform.position, levelConfigs[i].environment.transform.rotation);
                // UIManager.Instance.SetKillCount(levelConfigs[i].killLimit);
                 //shouldKillCount = levelConfigs[i].killLimit;
                 if (levelConfigs[i].isFoggy)
@@ -62,7 +70,7 @@ public class SpawnManager : MonoBehaviour
 
         
         
-        RenderSettings.skybox = skyboxes[Random.Range(0, skyboxes.Length )];
+        
 
         
     }
@@ -81,7 +89,7 @@ public class SpawnManager : MonoBehaviour
         {
 
 
-            Vector2 randXZ = RandomPointInAnnulus(50, 200);
+            Vector2 randXZ = RandomPointInAnnulus(500, 2000);
             Vector3 randomPosition = new Vector3(
             randXZ.x,
             transform.position.y,

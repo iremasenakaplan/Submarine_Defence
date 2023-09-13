@@ -16,6 +16,7 @@ MonoBehaviour:
   gunCode: midget
   hp: 20
   damage: 15
+  zoom: 20
   fireRate: 40
   price: 2000
   menuGun: {fileID: 1619377857420683708, guid: fdc8d186c9d00c142bfe9c0312606ea8, type: 3}

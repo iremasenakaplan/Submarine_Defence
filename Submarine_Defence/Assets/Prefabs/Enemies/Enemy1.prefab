@@ -404,7 +404,6 @@ GameObject:
   - component: {fileID: 1089795454529967303}
   - component: {fileID: 1110403180720105663}
   - component: {fileID: 1099950972180875283}
-  - component: {fileID: 1151052794571558177}
   m_Layer: 0
   m_Name: Large Cannons
   m_TagString: Untagged
@@ -477,19 +476,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1151052794571558177
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1086631597286477139}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 4.375985, y: 1.1826988, z: 13.536815}
-  m_Center: {x: 0.0000029802322, y: -0.00000017881393, z: 6.768399}
 --- !u!1 &3473221198717215051
 GameObject:
   m_ObjectHideFlags: 0
@@ -5403,7 +5389,6 @@ GameObject:
   - component: {fileID: 6068369205430615513}
   - component: {fileID: 6075024056017416939}
   - component: {fileID: 6083247356086850311}
-  - component: {fileID: 6112112210608943277}
   m_Layer: 0
   m_Name: Large Turret
   m_TagString: battleship
@@ -5477,19 +5462,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6112112210608943277
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6069525439271339943}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 9, y: 3, z: 11}
-  m_Center: {x: -0.0000030994415, y: 1.52, z: -0.7179928}
 --- !u!1 &6069746968994007663
 GameObject:
   m_ObjectHideFlags: 0
@@ -5658,7 +5630,6 @@ GameObject:
   - component: {fileID: 9124103298709671984}
   - component: {fileID: 9149412028404146028}
   - component: {fileID: 9141346857530662778}
-  - component: {fileID: 9108191357344269494}
   m_Layer: 0
   m_Name: Large Cannons
   m_TagString: Untagged
@@ -5731,19 +5702,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &9108191357344269494
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9118169274118958982}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 4.375985, y: 1.1826988, z: 13.536815}
-  m_Center: {x: 0.0000029802322, y: -0.00000017881393, z: 6.768399}
 --- !u!1 &9118208583288402186
 GameObject:
   m_ObjectHideFlags: 0
@@ -5755,7 +5713,6 @@ GameObject:
   - component: {fileID: 9115748516540672158}
   - component: {fileID: 9148761394389341414}
   - component: {fileID: 9141691927354455114}
-  - component: {fileID: 9108323127280267640}
   m_Layer: 0
   m_Name: Large Cannons
   m_TagString: Untagged
@@ -5828,19 +5785,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &9108323127280267640
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9118208583288402186}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 4.375985, y: 1.1826988, z: 13.536815}
-  m_Center: {x: 0.0000029802322, y: -0.00000017881393, z: 6.768399}
 --- !u!1 &9118593135780864858
 GameObject:
   m_ObjectHideFlags: 0
@@ -5852,7 +5796,6 @@ GameObject:
   - component: {fileID: 9124211988337567216}
   - component: {fileID: 9149405884237358150}
   - component: {fileID: 9141165873675681348}
-  - component: {fileID: 9108195048321913034}
   m_Layer: 0
   m_Name: Large Turret
   m_TagString: battleship
@@ -5926,19 +5869,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &9108195048321913034
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9118593135780864858}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 9, y: 3, z: 11}
-  m_Center: {x: -0.0000030994415, y: 1.52, z: -0.7179928}
 --- !u!1 &9118654169293790460
 GameObject:
   m_ObjectHideFlags: 0
@@ -5950,7 +5880,6 @@ GameObject:
   - component: {fileID: 9123908626904676020}
   - component: {fileID: 9149328710327908122}
   - component: {fileID: 9140768073208368284}
-  - component: {fileID: 9108240997413927894}
   m_Layer: 0
   m_Name: Large Turret
   m_TagString: battleship
@@ -6024,16 +5953,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &9108240997413927894
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9118654169293790460}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 9, y: 3, z: 11}
-  m_Center: {x: -0.0000030994415, y: 1.52, z: -0.7179928}

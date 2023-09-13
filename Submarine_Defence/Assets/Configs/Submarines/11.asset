@@ -16,8 +16,9 @@ MonoBehaviour:
   gunCode: satan
   hp: 36
   damage: 32
+  zoom: 35
   fireRate: 55
   price: 28000
   menuGun: {fileID: 8782440521283087788, guid: bc0309e4cd2b3134ba58384cd64e25e6, type: 3}
-  gameGun: {fileID: 6816594832767790229, guid: bd5b5e62186de424f8a2d90d3c16ae65, type: 3}
+  gameGun: {fileID: 6050501135338288232, guid: 1eae5e3c372697c4ab829883afdf5685, type: 3}
   flag: {fileID: 21300000, guid: bdbe81d5e3b0bb4459819cc1a6237f47, type: 3}

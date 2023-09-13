@@ -16,8 +16,9 @@ MonoBehaviour:
   gunCode: jarst
   hp: 36
   damage: 32
+  zoom: 35
   fireRate: 55
   price: 20000
   menuGun: {fileID: 4049186300744883765, guid: 6200538306b81d14e930700df22a333f, type: 3}
-  gameGun: {fileID: 6816594832767790229, guid: bd5b5e62186de424f8a2d90d3c16ae65, type: 3}
+  gameGun: {fileID: 6050501135338288232, guid: 1eae5e3c372697c4ab829883afdf5685, type: 3}
   flag: {fileID: 21300000, guid: 261ccf7cd555e7b4485a07e4fd75e93f, type: 3}

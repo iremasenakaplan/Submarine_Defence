@@ -21,6 +21,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] TMP_Text levelText;
     [SerializeField] GameObject gunLock;
     [SerializeField] GameObject shopPanel;
+    [SerializeField] GameObject removeAds;
     [SerializeField] Button playButton;
     [SerializeField] Button unlockGun;
     [SerializeField] Transform gunParent;
@@ -38,13 +39,16 @@ public class MenuManager : MonoBehaviour
     GameObject currentGun;
     int bankAccount;
 
-        public static int currentGunIndex;
+    public static int currentGunIndex;
 
     
 
     // Start is called before the first frame update
     void Start()
     {
+        if(PlayerPrefs.GetInt(Application.identifier + "IsPro")==1){
+            removeAds.SetActive(false);
+        }
         currentLevel = PlayerPrefs.GetInt(Application.identifier + "Level");
       //  PlayerPrefs.SetInt(Application.identifier + "BANK", 100000);
         if(PlayerPrefs.GetInt(Application.identifier + "Vibration")==1)

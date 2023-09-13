@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e6f64187ca6a184ca631b25565f24f2, type: 3}
+  m_Name: Env2
+  m_EditorClassIdentifier: 
+  ground: {fileID: 4452171728038121441, guid: cec7145de5f520844b657b5ed2f8e2e2, type: 3}
+  skyboxes:
+  - {fileID: 2100000, guid: 5ca9c2b135500514092da889baaee88b, type: 2}
+  sun: {fileID: 3904438582478094731, guid: 4da5eacdc13794140ae58002c847bc17, type: 3}

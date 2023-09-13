@@ -16,8 +16,9 @@ MonoBehaviour:
   gunCode: xclass
   hp: 36
   damage: 32
+  zoom: 35
   fireRate: 55
   price: 15000
   menuGun: {fileID: 9060881677611061123, guid: f53d4775f5439de49a4eb242e469839e, type: 3}
-  gameGun: {fileID: 6816594832767790229, guid: bd5b5e62186de424f8a2d90d3c16ae65, type: 3}
+  gameGun: {fileID: 6050501135338288232, guid: 1eae5e3c372697c4ab829883afdf5685, type: 3}
   flag: {fileID: 21300000, guid: 39e2f96067ddcb64d98f77d037b58308, type: 3}

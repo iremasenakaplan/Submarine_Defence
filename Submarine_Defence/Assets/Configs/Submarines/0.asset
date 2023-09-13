@@ -16,6 +16,7 @@ MonoBehaviour:
   gunCode: uboatxx
   hp: 15
   damage: 15
+  zoom: 20
   fireRate: 30
   price: 0
   menuGun: {fileID: 116301121289469164, guid: 73392e223fea4d74dbeb74659668094f, type: 3}

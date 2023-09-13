@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class GunRocketController : MonoBehaviour
 {
@@ -11,14 +12,16 @@ public class GunRocketController : MonoBehaviour
     public Button fireButton;
     public Image fireButtonImage;
     public Image cross;
+    public TMP_Text torpedoCountText;
+    public int torpedoCount = 10;
 
     // AudioSource audioSource;
     //public Slider healthSliderB;
 
-    //private void Start()
-    // {
-    //  audioSource = GetComponent<AudioSource>();
-    //  }
+    private void Start()
+    {
+        torpedoCountText.text = torpedoCount.ToString();
+    }
 
     private void Update()
     {
@@ -53,14 +56,27 @@ public class GunRocketController : MonoBehaviour
 
     public void FirlatRoket()
     {
-        GameObject yeniRoket = Instantiate(roketPrefab, firlatNoktasi.position, firlatNoktasi.rotation);
+        if(torpedoCount>0){
+            GameObject yeniRoket = Instantiate(roketPrefab, firlatNoktasi.position, firlatNoktasi.rotation);
 
-        Rigidbody roketRigidbody = yeniRoket.GetComponent<Rigidbody>();
-        roketRigidbody.AddForce(firlatNoktasi.forward * firlatGucu, ForceMode.Impulse);
-        fireButton.interactable = false;
-        fireButtonImage.fillAmount = 0;
-        Destroy(yeniRoket, 15);
+            Rigidbody roketRigidbody = yeniRoket.GetComponent<Rigidbody>();
+            roketRigidbody.AddForce(firlatNoktasi.forward * firlatGucu, ForceMode.Impulse);
+            fireButton.interactable = false;
+            fireButtonImage.fillAmount = 0;
+            Destroy(yeniRoket, 20);
+            if(torpedoCount>0)
+            torpedoCount-=1;
+            torpedoCountText.text = torpedoCount.ToString();
+            if(torpedoCount==0){
+                StartCoroutine(LoseByMissileFinished());
+            }
+        }
      //   audioSource.Play();
+    }
+
+    IEnumerator LoseByMissileFinished(){
+        yield return new WaitForSeconds(20);
+        UIManager.Instance.LoseGame();
     }
 
     //public void DecreaseHealth(float amount)

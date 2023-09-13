@@ -16,8 +16,9 @@ MonoBehaviour:
   gunCode: mclass
   hp: 30
   damage: 25
+  zoom: 25
   fireRate: 45
   price: 5000
   menuGun: {fileID: 7999742918573658877, guid: 6da37e46f5d42994d976f5c41d190c82, type: 3}
-  gameGun: {fileID: 6050501135338288232, guid: 1eae5e3c372697c4ab829883afdf5685, type: 3}
+  gameGun: {fileID: 50328311557646483, guid: 51860533b9957944a8fb1084559e4e94, type: 3}
   flag: {fileID: 21300000, guid: 6afebc83a2cca914e82d222a9c3fe7d3, type: 3}
