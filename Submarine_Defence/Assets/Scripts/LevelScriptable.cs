@@ -8,7 +8,9 @@ public class LevelScriptable : ScriptableObject
 {
     public int startIndex;
     public GameObject[] enemyShips;
+    public GameObject[] otherShips;
     public int killLimit;
     public GameObject environment;
     public bool isFoggy;
+    public string levelMessage;
 }

@@ -922,6 +922,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   joystick: {fileID: 2530964973270006306}
   rotationSpeed: 20
+  health: 100
 --- !u!114 &6050501135338288239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -934,7 +935,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08e3968a138ffa84890cb8ff4396ed68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roketPrefab: {fileID: 1270918712094158814, guid: 1cfe9310149cbee46a774437d4ea1231, type: 3}
+  roketPrefab: {fileID: 1270918712094158814, guid: e8dc33733fd6b164498619a656d65af9, type: 3}
   firlatNoktasi: {fileID: 6050501135146142306}
   firlatGucu: 10
   fireButton: {fileID: 6050501135610636501}

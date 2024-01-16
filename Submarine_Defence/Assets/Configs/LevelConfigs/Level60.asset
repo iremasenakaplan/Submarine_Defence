@@ -16,9 +16,13 @@ MonoBehaviour:
   enemyShips:
   - {fileID: 6070527319728557043, guid: a9efec7b016cc9249857257ec0958d72, type: 3}
   - {fileID: 7655588458896967820, guid: 9bf3fcd206dfe3546bc971e3dbd5c1be, type: 3}
-  - {fileID: 5603979852051915534, guid: f3cb91d65e0998242bae4f1d287a5266, type: 3}
   - {fileID: 4889312400101428037, guid: f89213795d1322c45bb72944841de651, type: 3}
-  - {fileID: 7655588458896967820, guid: 9bf3fcd206dfe3546bc971e3dbd5c1be, type: 3}
+  - {fileID: 5603979852051915534, guid: f3cb91d65e0998242bae4f1d287a5266, type: 3}
+  - {fileID: 5603979852051915534, guid: f3cb91d65e0998242bae4f1d287a5266, type: 3}
+  - {fileID: 1366229536598079112, guid: 4d3fcc73cb37be746a6464c505351fac, type: 3}
+  otherShips:
+  - {fileID: 8008567734168196475, guid: 0eec2cabd80354c4ebfda5b2368ef9a9, type: 3}
   killLimit: 0
   environment: {fileID: 7793009884758191893, guid: 254b878f15082b04fbb95ae8cd3062da, type: 3}
   isFoggy: 0
+  levelMessage: Do not hit civilian ships

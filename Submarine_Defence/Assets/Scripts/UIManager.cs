@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] TMP_Text enemiesInfo;
     [SerializeField] TMP_Text earned;
     [SerializeField] TMP_Text destroyed;
+    [SerializeField] TMP_Text messageText;
     //[SerializeField] TMP_Text torpedoCount;
     [SerializeField] GameObject _wonPanel;
     [SerializeField] GameObject _losePanel;
@@ -21,6 +22,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] Animator damageEffectAnim;
     [SerializeField] Image rankImage;
     [SerializeField] Image rankEarnImage;
+    [SerializeField] Slider healthbar;
     int killed;
     int totalEnemyCount;
     //int torpedoCount;;
@@ -71,6 +73,7 @@ public class UIManager : MonoBehaviour
             _wonPanel.SetActive(true);
         }
     }
+    
 
     public void LoseGame()
     {
@@ -94,6 +97,18 @@ public class UIManager : MonoBehaviour
         earned.text = "Earned : " + earning;
     }
 
+    public void ShowMessage(string message){
+        messageText.text = message;
+        messageText.gameObject.SetActive(true);
+        StartCoroutine(DeactivateMessageText());
+    }
+
+    IEnumerator DeactivateMessageText(){
+        yield return new WaitForSeconds(3f);
+        messageText.gameObject.SetActive(false);
+    }
+
+
     public void AdWatchEarn(){
         Action adWatchResult = MultiplyEarning;
         GoogleMobileAdsDemoScript.Instance.UserChoseToWatchAd(adWatchResult);
@@ -114,6 +129,14 @@ public class UIManager : MonoBehaviour
            // healthBar.value = healthBar.value-damage;
             damageEffectAnim.Play("Damage");
         }
+    }
+
+    public void SetHealthBarMax(float maxHealth){
+        healthbar.maxValue = maxHealth;
+    }
+
+    public void SetHealthBar(float health){
+        healthbar.value = health;
     }
 
     // Unity'nin Update i�levi, d��man say�s�n� g�ncellemek i�in kullan�labilir

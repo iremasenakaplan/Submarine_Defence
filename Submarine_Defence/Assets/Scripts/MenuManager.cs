@@ -46,6 +46,8 @@ public class MenuManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        currentGunIndex = 0;
+        // /PlayerPrefs.SetInt(Application.identifier + "BANK", 1000000);
         if(PlayerPrefs.GetInt(Application.identifier + "IsPro")==1){
             removeAds.SetActive(false);
         }

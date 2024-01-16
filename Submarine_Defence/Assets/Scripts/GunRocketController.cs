@@ -3,17 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using SparseDesign;
+using SparseDesign.ControlledFlight;
 
 public class GunRocketController : MonoBehaviour
 {
     public GameObject roketPrefab;
+
     public Transform firlatNoktasi;
     public float firlatGucu = 10f;
     public Button fireButton;
     public Image fireButtonImage;
     public Image cross;
     public TMP_Text torpedoCountText;
+
     public int torpedoCount = 10;
+
+
+    private GameObject lastTarget;
 
     // AudioSource audioSource;
     //public Slider healthSliderB;
@@ -21,6 +28,7 @@ public class GunRocketController : MonoBehaviour
     private void Start()
     {
         torpedoCountText.text = torpedoCount.ToString();
+        
     }
 
     private void Update()
@@ -40,6 +48,7 @@ public class GunRocketController : MonoBehaviour
             if (hit.transform.tag == "battleship")
             {
                 cross.color = Color.red;
+                lastTarget = hit.transform.gameObject;
             }
             else
             {
@@ -63,16 +72,18 @@ public class GunRocketController : MonoBehaviour
             roketRigidbody.AddForce(firlatNoktasi.forward * firlatGucu, ForceMode.Impulse);
             fireButton.interactable = false;
             fireButtonImage.fillAmount = 0;
-            Destroy(yeniRoket, 20);
+            Destroy(yeniRoket, 25);
             if(torpedoCount>0)
-            torpedoCount-=1;
+                torpedoCount-=1;
             torpedoCountText.text = torpedoCount.ToString();
-            if(torpedoCount==0){
+            if( torpedoCount==0){
                 StartCoroutine(LoseByMissileFinished());
             }
         }
      //   audioSource.Play();
     }
+
+   
 
     IEnumerator LoseByMissileFinished(){
         yield return new WaitForSeconds(20);

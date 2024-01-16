@@ -30,7 +30,10 @@ public class SpawnManager : MonoBehaviour
         
         paths = FindObjectsOfType<PathCreator>();
 
-        Instantiate(shipConfigs[MenuManager.currentGunIndex].gameGun, shipConfigs[MenuManager.currentGunIndex].gameGun.transform.position, shipConfigs[MenuManager.currentGunIndex].gameGun.transform.rotation);
+        GameObject s = Instantiate(shipConfigs[MenuManager.currentGunIndex].gameGun, shipConfigs[MenuManager.currentGunIndex].gameGun.transform.position, shipConfigs[MenuManager.currentGunIndex].gameGun.transform.rotation);
+        s.GetComponent<PlayerController>().SetHealth(shipConfigs[MenuManager.currentGunIndex].hp);
+        UIManager.Instance.SetHealthBarMax(shipConfigs[MenuManager.currentGunIndex].hp);
+        UIManager.Instance.SetHealthBar(shipConfigs[MenuManager.currentGunIndex].hp);
         MechanicsManager.Instance.SetMaxZoom(shipConfigs[MenuManager.currentGunIndex].zoom);
         compassBar.SetActive(true);
         int level = PlayerPrefs.GetInt(Application.identifier + "Level");
@@ -47,7 +50,9 @@ public class SpawnManager : MonoBehaviour
                     RenderSettings.fog = true;
                     RenderSettings.fogMode = FogMode.Exponential;
                 }
-                StartCoroutine(SpawnEnemies(levelConfigs[i-1]));
+                StartCoroutine(SpawnShips(levelConfigs[i-1]));
+            
+                UIManager.Instance.ShowMessage(levelConfigs[i-1].levelMessage);
                 break;
                
             }
@@ -61,7 +66,9 @@ public class SpawnManager : MonoBehaviour
                     RenderSettings.fog = true;
                     RenderSettings.fogMode = FogMode.Exponential;
                 }
-                StartCoroutine(SpawnEnemies(levelConfigs[i]));
+                StartCoroutine(SpawnShips(levelConfigs[i]));
+               
+                UIManager.Instance.ShowMessage(levelConfigs[i].levelMessage);
                 // SpawnEnemyShips(levelConfigs[i].enemyShips);
 
                 break;
@@ -75,10 +82,12 @@ public class SpawnManager : MonoBehaviour
         
     }
 
-    IEnumerator SpawnEnemies(LevelScriptable levelConfig){
+    IEnumerator SpawnShips(LevelScriptable levelConfig){
         yield return new WaitForSeconds(2);
         Destroy(loadEffect);
         SpawnEnemyShips(levelConfig.enemyShips);
+        if(levelConfig.otherShips.Length>0)
+            SpawnOtherShips(levelConfig.otherShips);
         
     }
 
@@ -100,6 +109,25 @@ public class SpawnManager : MonoBehaviour
             s.GetComponent<PathFollower>().speed += Random.Range(0f, 0.5f);
         }
         GameManager.Instance.SetEnemyCount(shipList.Length); 
+    }
+
+    void SpawnOtherShips(GameObject[] shipList)
+    {
+
+        foreach (GameObject ship in shipList)
+        {
+
+
+            Vector2 randXZ = RandomPointInAnnulus(500, 2000);
+            Vector3 randomPosition = new Vector3(
+            randXZ.x,
+            transform.position.y,
+            randXZ.y);
+ 
+            GameObject s = Instantiate(ship, randomPosition, ship.transform.rotation);
+            s.GetComponent<PathFollower>().SetPath(paths[Random.Range(0, paths.Length-1)]);
+            s.GetComponent<PathFollower>().speed += Random.Range(0f, 0.5f);
+        }
     }
 
 

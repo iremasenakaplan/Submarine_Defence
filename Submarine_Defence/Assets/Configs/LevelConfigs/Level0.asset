@@ -19,3 +19,4 @@ MonoBehaviour:
   killLimit: 0
   environment: {fileID: 7793009884758191893, guid: 254b878f15082b04fbb95ae8cd3062da, type: 3}
   isFoggy: 0
+  levelMessage: Destroy enemy ships
